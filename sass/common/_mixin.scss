@@ -1,0 +1,21 @@
+// mixin
+@mixin wrapper($width: $width-base) {
+  max-width: $width;
+  margin: 0 auto;
+  @media #{$mq-md} {
+    max-width: $width-middle;
+  }
+  @media #{$mq-sm} {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+}
+@mixin box-container($margin: -15px) {
+  margin: 0 $margin;
+  display: flex;
+  flex-wrap: wrap;
+  @media #{$mq-sm} {
+    display: block;
+    margin: 0;
+  }
+}

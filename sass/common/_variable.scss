@@ -1,0 +1,29 @@
+//// color
+$primary: #81c6c4;
+$primary-light: #ace0e0;
+
+$bg: #f7f7f7;
+$border: #ddd;
+
+// text
+$text: #1b2323;
+$text-light: #767c7c;
+
+//// value
+// width
+$width-base: 960px;
+$width-middle: 700px;
+
+// height
+$height-header: 60px;
+
+// fontface
+$source-sans: 'Source Sans Pro', sans-serif;
+$yu: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+
+//// Media Queries - Breakpoints
+
+$mq-lg: "(min-width: 1240px)"; //Large display
+$mq-md: "(max-width: 1024px)"; // Tablet
+$mq-sm: "(max-width: 767px)"; // smartphone
+$mq-320: "(max-width: 360px)"; // iPhoneSE
