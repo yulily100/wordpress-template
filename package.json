@@ -15,28 +15,15 @@
   "author": "yulily100",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yulily100/template-less/issues"
+    "url": "https://github.com/yulily100/wordpress-template/issues"
   },
-  "homepage": "https://github.com/yulily100/template-less",
+  "homepage": "https://github.com/yulily100/wordpress-template",
   "browserslist": "> 0.1%, ie 10",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-2": "^6.24.1",
     "browser-sync": "^2.26.3",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^5.0.0",
-    "gulp-less": "^3.5.0",
     "gulp-plumber": "^1.2.0",
-    "gulp-sass": "^4.0.1",
-    "uglifyjs-webpack-plugin": "^1.2.7",
-    "webpack": "^4.15.1",
-    "webpack-stream": "^4.0.3"
-  },
-  "dependencies": {
-    "hamburgers": "^0.9.3",
-    "lodash.throttle": "^4.1.1",
-    "postprocessing": "^4.8.1"
+    "gulp-sass": "^4.0.1"
   }
 }
