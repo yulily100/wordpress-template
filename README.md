@@ -4,4 +4,8 @@ wordpress用テンプレート全部入り
 - gulpでコンパイルできるようにする
 
 ## 使い方
-- local　by Flywheelでプロジェクトを作って、このリポジトリの中身をテーマとして置く
+- Local by Flywheelでプロジェクトを作る
+- githubで新しいリポジトリを作る
+- 新しいリポジトリのアドレスをLocalで作ったプロジェクトのテーマのディレクトリでcloneする
+- cloneしたディレクトリにこのwordpress-templateのファイルを一式置く
+- yarnする
