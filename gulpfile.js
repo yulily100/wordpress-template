@@ -1,11 +1,8 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var browser = require('browser-sync');
+var browserSync = require('browser-sync').create();
 var plumber = require('gulp-plumber');
 var autoprefixer = require('gulp-autoprefixer');
-var webpackStream = require('webpack-stream');
-var webpack = require('webpack');
-var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 gulp.task('sass:watch', function () {
     gulp.watch('./sass/**/*.scss', ['sass']);
@@ -20,49 +17,35 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('./'));
 });
 gulp.task('sass-watch', function() {
-  var watcher = gulp.watch('./sass/**/*.scss', gulp.series('sass'));
+  var watcher = gulp.watch('./sass/**/*.scss', gulp.series('sass', 'bs-reload'));
   watcher.on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
   });
 });
 
-// jsビルド
-var webpackConfig = {
-  entry: './js/index.js',
-  output: {
-    filename: 'yokoito.js',
-  },
-  module: {
-    rules: [
-      { test: /\.js$/, loader: 'babel-loader' },
-    ],
-  },
-  externals: {
-    three: 'THREE',
-  },
-};
-gulp.task('js', function () {
-  const config = Object.assign(webpackConfig, {
-    mode: 'production',
-    plugins: [
-      new UglifyJsPlugin(),
-    ],
-  })
-  return webpackStream(config, webpack)
-    .pipe(gulp.dest('./'));
-});
-gulp.task('js-watch', function () {
-  const watchConfig = Object.assign(webpackConfig, {
-    mode: 'development',
-    watch: true,
-  });
-  return webpackStream(watchConfig, webpack)
-    .pipe(gulp.dest('./'));
+//ブラウザの設定
+gulp.task('browser-init', function (done) {
+    browserSync.init({
+        proxy: 'http://unknownkyoto.wp/',  // Local by Flywheelのドメイン
+        open: true,
+        watchOptions: {
+            debounceDelay: 1000  //1秒間、タスクの再実行を抑制
+        }
+    });
+    done();
 });
 
-gulp.task('build', gulp.parallel('sass', 'js'));
+//リロード実行タスク
+gulp.task('bs-reload', function (done) {
+    browserSync.reload();
+    done();
+});
+
+gulp.task('build', gulp.parallel('sass'));
 gulp.task('watch', gulp.series(
-  gulp.parallel('sass', 'js'),
-  gulp.parallel('sass-watch', 'js-watch')
+  'browser-init',
+  gulp.parallel('sass'),
+  gulp.parallel('sass-watch')
 ));
+
 gulp.task('default', gulp.series('watch'));

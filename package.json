@@ -1,7 +1,7 @@
 {
-  "name": "blog-template",
+  "name": "wordpress-template",
   "version": "1.0.0",
-  "description": "wordpressのブログっぽいテンプレート",
+  "description": "wordpressのテンプレート",
   "main": "",
   "scripts": {
     "build": "gulp build",
@@ -24,7 +24,7 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-2": "^6.24.1",
-    "browser-sync": "^2.24.5",
+    "browser-sync": "^2.26.3",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-less": "^3.5.0",
