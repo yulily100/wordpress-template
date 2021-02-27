@@ -6,11 +6,8 @@ Author URI: https://twitter.com/yulily100
 Version: 1.0
 */
 
-@import "common/normalize";
-@import "common/variable";
-@import "common/mixin";
-@import "common/common";
-@import "component/header";
-@import "component/footer";
-@import "pages/top";
+@import "lib/normalize";
+@import "lib/variable";
+@import "lib/mixin";
+@import "lib/common";
 @import "pages/single";
