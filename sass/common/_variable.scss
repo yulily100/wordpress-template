@@ -18,12 +18,12 @@ $width-middle: 700px;
 $height-header: 60px;
 
 // fontface
-$source-sans: 'Source Sans Pro', sans-serif;
 $yu: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
 
-//// Media Queries - Breakpoints
 
-$mq-lg: "(min-width: 1240px)"; //Large display
-$mq-md: "(max-width: 1024px)"; // Tablet
-$mq-sm: "(max-width: 767px)"; // smartphone
+//// Media Queries - Breakpoints
+$mq-lerge: "(min-width: 1240px)"; //Large display
+$mq-tablet: "(max-width: 1024px)"; // Tablet
+$mq-sp: "(max-width: 767px)"; // smartphone
 $mq-320: "(max-width: 360px)"; // iPhoneSE
+

@@ -18,7 +18,6 @@
 .single-info {
   color: $text-light;
   margin: 0 0 10px 0;
-  font-family: $source-sans;
   font-size: 17px;
   a {
     color: $text-light;
@@ -100,7 +99,6 @@
   margin: 0 10px;
   width: 180px;
   display: inline-block;
-  font-family: $source-sans;
   font-weight: bold;
   letter-spacing: .08em;
   &:hover {
@@ -130,7 +128,6 @@
   margin: 0 0 80px 0;
 }
 .single-aside-title {
-  font-family: $source-sans;
   letter-spacing: .04em;
   font-size: 22px;
   margin: 0 0 1em 0;
