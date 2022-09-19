@@ -29,13 +29,13 @@ ul, li {
 
 .for-pc {
   display: inline-block;
-  @media #{$mq-sm} {
+  @media #{$mq-sp} {
     display: none;
   }
 }
 .for-sp {
   display: none;
-  @media #{$mq-sm} {
+  @media #{$mq-sp} {
     display: inline-block;
   }
 }
