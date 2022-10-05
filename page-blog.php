@@ -23,8 +23,7 @@ $args = array(
 $the_query = new WP_Query($args);
 ?>
 
-<div class="blog-wrapper">
-  <?php get_template_part("blog-header"); ?>
+<div class="">
 
   <section class="blog-section">
     <ul class="blog-pickup">

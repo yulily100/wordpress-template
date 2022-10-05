@@ -1,19 +1,9 @@
 <?php
 get_header();
 $thumbnail_id =  get_post_thumbnail_id($id);
-if($thumbnail_id)
-{
-  $_image  = wp_get_attachment_image_src($thumbnail_id,'entry-image');
-  $image = $_image[0];
-}
-else{
-  $image = TPL_URL . '/assets/img/common/noimage.png';
-}
-$image_tag = '<img src="'. $image .'" class="eyecatch" alt="'. get_the_title() .'" />';
-
 ?>
 
-<div class="blog-wrapper">
+<div class="">
   <?php get_template_part("blog-header"); ?>
 
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

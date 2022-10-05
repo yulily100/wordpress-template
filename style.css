@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: wordpress-template
 Description: wordpress-template
@@ -357,3 +358,93 @@ table {
 td,
 th {
   padding: 0; }
+
+body {
+  font-family: "Helvetica Neue" , Helvetica , Arial , Verdana , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1b2323; }
+
+a {
+  transition: all .2s;
+  text-decoration: none;
+  color: #1b2323; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0; }
+  h1 a, h1 a:hover, h2 a, h2 a:hover, h3 a, h3 a:hover, h4 a, h4 a:hover, h5 a, h5 a:hover, h6 a, h6 a:hover {
+    text-decoration: none; }
+
+p {
+  margin: 0; }
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.for-pc {
+  display: inline-block; }
+  @media (max-width: 767px) {
+    .for-pc {
+      display: none; } }
+
+.for-sp {
+  display: none; }
+  @media (max-width: 767px) {
+    .for-sp {
+      display: inline-block; } }
+
+.for-320 {
+  display: none; }
+  @media (max-width: 360px) {
+    .for-320 {
+      display: inline-block; } }
+
+.btn-primary {
+  background: #81c6c4;
+  color: #fff;
+  display: inline-block;
+  padding: 4px 12px;
+  font-weight: bold; }
+
+.common-blog-thumb-link:hover {
+  opacity: .8; }
+
+.common-blog-title {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 2px 0 0 0; }
+  .common-blog-title a {
+    display: block; }
+    .common-blog-title a:hover {
+      color: #767c7c; }
+
+.common-blog-category {
+  position: relative;
+  padding: 0 0 0 12px;
+  margin: 0 12px 0 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .08em; }
+  .common-blog-category:before {
+    content: "";
+    width: 6px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    background: #767c7c;
+    left: 0;
+    top: 8px; }
+  .common-blog-category a {
+    color: #81c6c4; }
+    .common-blog-category a:after {
+      content: ","; }
+    .common-blog-category a:last-child:after {
+      display: none; }
+
+.common-blog-date {
+  font-size: 14px;
+  color: #767c7c; }
