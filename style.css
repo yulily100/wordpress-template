@@ -385,6 +385,10 @@ ul, li {
   padding: 0;
   list-style: none; }
 
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto; }
+
 .for-pc {
   display: inline-block; }
   @media (max-width: 767px) {

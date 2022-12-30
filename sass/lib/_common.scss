@@ -27,6 +27,12 @@ ul, li {
   list-style: none;
 }
 
+// layout
+.wrapper {
+  max-width: $width-base;
+  margin: 0 auto;
+}
+
 .for-pc {
   display: inline-block;
   @media #{$mq-sp} {

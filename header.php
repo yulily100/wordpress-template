@@ -16,6 +16,9 @@
   </head>
 
   <body <?php body_class(); ?>>
-    <header class="header">
-        <h1>title</h1>
-    </header>
+
+  <header class="header">
+    <div class="wrapper">
+      <h1>title</h1>
+    </div>
+  </header>

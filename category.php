@@ -13,7 +13,7 @@ $args = array(
 $the_query = new WP_Query($args);
 ?>
 
-<div class="">
+<div class="wrapper">
 
   <p class="">category:<?php single_cat_title(); ?></p>
   <section class="">

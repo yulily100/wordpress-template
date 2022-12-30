@@ -1,5 +1,7 @@
 <footer class="footer">
-  フッター
+  <div class="wrapper">
+    <p>フッター</p>
+  </div>
 </footer>
 
 <?php wp_footer(); ?>

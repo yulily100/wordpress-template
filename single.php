@@ -3,7 +3,7 @@ get_header();
 $thumbnail_id =  get_post_thumbnail_id($id);
 ?>
 
-<div class="">
+<div class="wrapper">
   <?php get_template_part("blog-header"); ?>
 
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
