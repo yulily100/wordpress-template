@@ -15,27 +15,27 @@ $the_query = new WP_Query($args);
 
 <div class="">
 
-  <p class="category-title">category:<?php single_cat_title(); ?></p>
-  <section class="blog-section">
-    <ul class="blog-entry">
+  <p class="">category:<?php single_cat_title(); ?></p>
+  <section class="">
+    <ul class="">
       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <li>
-          <a href="<?php the_permalink();?>" class="common-blog-thumb-link">
+          <a href="<?php the_permalink();?>" class="">
             <?php if (has_post_thumbnail()) : ?>
               <?php the_post_thumbnail();?>
             <?php else : ?>
               <div class="noimage"></div>
             <?php endif; ?>
           </a>
-          <span class="common-blog-category"><?php the_category(" "); ?></span><span class="common-blog-date"><?php echo get_the_date(); ?></span>
-          <h3 class="common-blog-title">
+          <span class=""><?php the_category(" "); ?></span><span class=""><?php echo get_the_date(); ?></span>
+          <h3 class="">
             <a href="<?php the_permalink();?>" class=""><?php if(mb_strlen($post->post_title)>32) { $title= mb_substr($post->post_title,0,32) ; echo $title. … ;} else {echo $post->post_title;}?></a></h3>
         </li>
       <?php endwhile;endif; wp_reset_query();?>
     </ul>
   </div>
 
-  <div class="blog-pager">
+  <div class="">
     <?php echo paginate_links(array(
       'prev_text'    => '<span>＜</span>',
       'next_text'    => '<span class="pager-next">＞</span>'

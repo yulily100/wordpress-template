@@ -15,29 +15,29 @@ $the_query = new WP_Query($args);
 
 <div class="">
 
-  <section class="blog-section">
-    <ul class="blog-entry">
+  <section class="">
+    <ul class="">
       <?php
       if ( $the_query->have_posts() ) :
        while ( $the_query->have_posts() ) : $the_query->the_post();
       ?>
         <li>
-          <a href="<?php the_permalink();?>" class="common-blog-thumb-link">
+          <a href="<?php the_permalink();?>" class="">
             <?php if (has_post_thumbnail()) : ?>
               <?php the_post_thumbnail();?>
             <?php else : ?>
               <div class="noimage"></div>
             <?php endif; ?>
           </a>
-          <span class="common-blog-category"><?php the_category(" "); ?></span><span class="common-blog-date"><?php echo get_the_date(); ?></span>
-          <h3 class="common-blog-title">
+          <span class=""><?php the_category(" "); ?></span><span class=""><?php echo get_the_date(); ?></span>
+          <h3 class="">
             <a href="<?php the_permalink();?>" class=""><?php if(mb_strlen($post->post_title)>32) { $title= mb_substr($post->post_title,0,32) ; echo $title. … ;} else {echo $post->post_title;}?></a></h3>
         </li>
       <?php endwhile;endif; wp_reset_query();?>
     </ul>
   </div>
 
-  <div class="blog-pager">
+  <div class="">
   <?php
     if ($the_query->max_num_pages > 1) {
       echo paginate_links(array(
