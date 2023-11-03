@@ -35,21 +35,12 @@ ul, li {
 
 .for-pc {
   display: inline-block;
-  @media #{$mq-sp} {
-    display: none;
-  }
 }
 .for-sp {
   display: none;
-  @media #{$mq-sp} {
-    display: inline-block;
-  }
 }
 .for-320 {
   display: none;
-  @media #{$mq-320} {
-    display: inline-block;
-  }
 }
 
 .btn-primary {
