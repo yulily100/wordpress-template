@@ -1,51 +1,51 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync').create();
-var plumber = require('gulp-plumber');
-var autoprefixer = require('gulp-autoprefixer');
+// gulpfile.js
+const gulp = require('gulp');
+const sass = require('gulp-sass')(require('sass-embedded')); // ★ Embedded Sass
+const browserSync = require('browser-sync').create();
+const plumber = require('gulp-plumber');
+const autoprefixer = require('gulp-autoprefixer');
 
-gulp.task('sass:watch', function () {
-    gulp.watch('./sass/**/*.scss', ['sass']);
-});
+// パスは必要に応じて変更
+const paths = {
+  styles: {
+    src: './sass/**/*.scss',
+    dest: './' // 例: ルート直下にCSSを出力。css/ にしたいなら './css'
+  }
+};
 
-// sass
-gulp.task('sass', function() {
-  return gulp.src('./sass/**/*.scss')
+// Sass タスク（必ず return する）
+function styles() {
+  return gulp.src(paths.styles.src)
     .pipe(plumber())
-    .pipe(sass())
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(autoprefixer())
-    .pipe(gulp.dest('./'));
-});
-gulp.task('sass-watch', function() {
-  var watcher = gulp.watch('./sass/**/*.scss', gulp.series('sass', 'bs-reload'));
-  watcher.on('change', function(event) {
-    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+    .pipe(gulp.dest(paths.styles.dest))
+    .pipe(browserSync.stream()); // 変更時に注入
+}
+
+// BrowserSync 起動
+function browserInit(done) {
+  browserSync.init({
+    proxy: 'http://wordpress-template.wp/', // Local by Flywheel のドメイン
+    open: true,
+    watchOptions: { debounceDelay: 1000 }
   });
-});
+  done();
+}
 
-//ブラウザの設定
-gulp.task('browser-init', function (done) {
-    browserSync.init({
-        proxy: 'http://wordpresstemplate.wp/',  // Local by Flywheelのドメイン
-        open: true,
-        watchOptions: {
-            debounceDelay: 1000  //1秒間、タスクの再実行を抑制
-        }
-    });
-    done();
-});
+// リロード
+function reload(done) {
+  browserSync.reload();
+  done();
+}
 
-//リロード実行タスク
-gulp.task('bs-reload', function (done) {
-    browserSync.reload();
-    done();
-});
+// 監視（Gulp 4の書き方）
+function watchFiles() {
+  gulp.watch(paths.styles.src, gulp.series(styles, reload));
+}
 
-gulp.task('build', gulp.parallel('sass'));
-gulp.task('watch', gulp.series(
-  'browser-init',
-  gulp.parallel('sass'),
-  gulp.parallel('sass-watch')
-));
-
-gulp.task('default', gulp.series('watch'));
+// 公開タスク
+exports.sass = styles;
+exports.build = gulp.series(styles);
+exports.watch = gulp.series(browserInit, styles, watchFiles);
+exports.default = exports.watch;

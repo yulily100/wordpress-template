@@ -21,9 +21,12 @@
   "browserslist": "> 0.1%, ie 10",
   "devDependencies": {
     "browser-sync": "^2.26.3",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-plumber": "^1.2.0",
-    "gulp-sass": "^4.0.1"
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.92.1",
+    "sass-embedded": "^1.92.1",
+    "sass-migrator": "^2.4.2"
   }
 }
