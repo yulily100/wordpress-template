@@ -9,5 +9,6 @@ wordpress用テンプレート全部入り
 - githubで新しいリポジトリを作る
 - 新しいリポジトリのアドレスをLocalで作ったプロジェクトのテーマのディレクトリでcloneする
 - cloneしたディレクトリにこのwordpress-templateのファイルを一式置く
-- yarnする
-- gulpする
+- yarn install
+- yarn build
+- yarn watch
